@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+
+   int a[30], ele, num, i;
+
+   cout << "Enter no of elements :" << endl;
+   cin >> num;
+
+   cout <<"Enter the values :" << endl;
+   for (i = 0; i < num; i++) {
+      cin >> a[i];
+   }
+
+
+   cout<< "Enter the elements to be searched :" << endl ;
+   cin >> ele;
+
+   i = 0;
+   while (i < num && ele != a[i]) {
+      i++;
+   }
+
+
+   if (i < num) {
+      cout << "Number found at the location = " << i+ 1;
+   } else {
+      cout<< "Number not found" << endl;
+   }
+
+   return 0;
+}
