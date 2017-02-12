@@ -1,54 +1,39 @@
-
 #include<bits/stdc++.h>
-
 using namespace std;
 
-void Bubble_sort(int arr[],int n)
+bool bS(int arr[],int n,int num)
 {
- for(int i=1;i<n;i++)
- {
-  for(int j=0; j<n-1; j++)
-   {
+int low=0;
+int high=n-1;
 
-    if(arr[j]>arr[j+1]){
-
-      swap(arr[j],arr[j+1]);
-      }
-    }
-  }
-
+while(low<=high)
+{
+int mid=(low+high)/2;
+if (arr[mid]==num) return true;
+if (arr[mid]>num) high=mid-1;
+else low=mid+1;
 }
-bool binary_search(int arr[], int n, int key)
-{
-  int lo=0 , hi=n-1;
-  while(lo<=hi){
-
-  int mid=(lo+hi)/2;
-  if(arr[mid]==key) return true;
-  else if(arr[mid]<key)  lo=mid+1;
-  else hi=mid-1;
-  }
-
 return false;
-
 }
-
 int main()
 {
+int a, ar[100],number;
+cout<<"number of elements"<<endl;
+cin>>a;
+cout<< "enter array"<< endl;
+for(int i=0;i<a;i++)
 
- int arr[100], n, key;
- cin>>n;
+cin >> ar[i];
+cout<< "enter desired number"<< endl;
+cin >> number;
 
- for(int i=0; i<n; i++)
- cin>> arr[i];
- cin>>key;
- //Bubble_sort(arr,n);
-//sort(arr,arr+m)
-sort(&arr[0],&arr[n]); //algorithm.h
+    bool ok = bS(ar, a, number);
+    if(ok==true) cout << "Yes";
+    else cout << "No";
+    return 0;
 
-bool ok = binary_search(arr,n,key);
-if(ok==true)puts("Yes");
-else puts("No");
+
+
+
 
 }
-
