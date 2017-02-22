@@ -3,7 +3,7 @@ using namespace std;
 
 class Info
 {
- public:
+ protected:
     string name;
     string phn;
     void setPhn(string phn)
