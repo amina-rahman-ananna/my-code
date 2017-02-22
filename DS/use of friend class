@@ -1,0 +1,81 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Info
+{  friend class demo;
+protected:
+    string name;
+    string phn;
+    void setPhn(string phn)
+    {
+        this->phn=phn;
+    }
+    virtual string get() //tea and stu k call korle ta both info k call kore ja ke statick linkage bole,eita k break korte virtual
+    {
+        return name;
+    }
+};
+
+class Teacher : public Info
+{
+private:
+  double salary;
+public:
+    Teacher(string name,string phn,double salary)
+    {
+        this-> name= name;
+        this->phn=phn;
+        this-> salary=salary;
+    }
+    double getSalary()
+    {
+     return salary;
+    }
+     string get()
+    {
+        return "Teacher's Name= "+name;
+    }
+};
+
+
+class Student :public Info
+{
+private:
+
+    double cgpa;
+public:
+    Student(string name,string phn,double cgpa)
+    {
+        this-> name= name;
+        this->phn=phn;
+        this-> cgpa=cgpa;
+    }
+    double getCgpa()
+    {
+    return cgpa;
+    }
+     string get()
+    {
+        return "Student's Name= "+name; //duita string er majhe + dile ekta string hoy
+    }
+};
+
+ class demo  //demo class info class use korte parbena coz inherit koreni utill friend class 
+ {
+ public:
+    void print(Teacher obj)
+    {
+        cout << obj.name << endl;
+    }
+ };
+int main()
+{
+    Info *obj;   //pointer adress
+    Teacher objTea ("mosh","0123",50000);
+    Student objStu("ananna","0123",3.21);
+    
+    demo dx;
+    dx.print(objTea);
+
+    return 0;
+}
