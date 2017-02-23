@@ -15,7 +15,7 @@ public:
     }
     void pop()
     {
-       if (t==0) cout << "Opeartion is not valid!" << endl;
+       if (t==0) cout << "Operation is not valid!" << endl;
        else cout <<"Deleted :: " << S[--t] << endl;
     }
     void top()
@@ -45,6 +45,7 @@ int main()
     st.top();
     st.push(25);
     st.top();
+    st.Size();
 
 
  return 0;
