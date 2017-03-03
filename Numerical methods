@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+ double dsum1=0, dsum2=0;
+ float fsum1=0, fsum2=0;
+ double dadd1=1.0, dadd2=1e-6;
+ float fadd1=1.0, fadd2=1e-6;
+
+ int main()
+ {
+     long i;
+     for(i=1; i<=1000000;i++)
+     {
+         dsum1=dsum1+dadd1;
+         dsum2=dsum2+dadd2;
+         fsum1=fsum1+fadd1;
+         fsum2=fsum2+fadd2;
+
+     }
+    printf("%15lf,%15lf,%15lf,%15lf" ,dsum1, dsum2, fsum1, fsum2);
+ }
