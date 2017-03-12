@@ -1,0 +1,76 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Queue
+{
+private:
+    int S[500], t, c = 0;
+public:
+    Queue()
+    {
+        c = 0;
+        t = 0;
+    }
+    void push(int x)
+    {
+        S[t++] = x;
+    }
+    void pop()
+    {
+      if((t-c)==0)
+        cout << "Go away :P\n";
+      else
+        printf("Deleted:: %d\n",S[c++]);
+    }
+    void front()
+    {
+      if((t-c)==0)
+        cout << "Wrong Number :v\n";
+      else
+        printf("Last / Top element:: %d\n",S[c]);
+    }
+    void Size()
+    {
+        printf("Size:: %d\n",t-c);
+    }
+};
+
+int main()
+{
+    Queue q;
+
+    q.push(20);
+    q.push(25);
+    q.push(30);
+    q.push(35);
+
+    q.Size();
+
+    q.pop();
+
+    q.Size();
+
+    q.front();
+
+    q.pop();
+    q.Size();
+
+    q.pop();
+    q.pop();
+
+    q.Size();
+    q.pop();
+    q.front();
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
