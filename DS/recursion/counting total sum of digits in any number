@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int sum (int x)
+ {
+     if(x==0) return 0;
+    else return sum(x/10) +(x%10);
+
+ }
+
+ int main()
+ {
+   int x=1054,y;
+   y=sum(x);
+   printf("%d",y);
+   return 0;
+ }
