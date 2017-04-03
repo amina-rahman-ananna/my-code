@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool binarySearch(int low,int high,int key, int arr[])
+
+{
+    if(low>high) return false;
+    int mid= (low+high)/2;
+    if (arr[mid]==key) return true;
+    if(arr[mid]< key) return binarySearch(mid+1,high,key,arr);
+    else return binarySearch(low,mid-1,key,arr);
+
+}
+int main()
+{
+    int arr[] ={10,25,89,45,75,25,89,36};
+    sort (&arr[0],&arr[sizeof(arr)/sizeof(int)]);
+    bool f= binarySearch(0,sizeof(arr)/sizeof(int)-1,36,arr);
+    if (f==true) cout << "present";
+    else cout << "absent" << endl;
+
+    return 0;
+
+}
+
+
