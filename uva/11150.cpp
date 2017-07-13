@@ -16,4 +16,4 @@ using namespace std;
      cout << a << endl;
    }
   return 0;
-}
+ }
